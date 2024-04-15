@@ -29,14 +29,14 @@ builder.Services.AddCors(options =>
         );
 });
 //DotENV Configuration
-DotNetEnv.Env.Load();
-CreateHostBuilder(args).Build().Run();
-static IHostBuilder CreateHostBuilder(string[] args) =>
-       Host.CreateDefaultBuilder(args)
-           .ConfigureWebHostDefaults(webBuilder =>
-           {
-               webBuilder.UseStartup<Program>();
-           });
+//DotNetEnv.Env.Load();
+//CreateHostBuilder(args).Build().Run();
+//static IHostBuilder CreateHostBuilder(string[] args) =>
+//       Host.CreateDefaultBuilder(args)
+//           .ConfigureWebHostDefaults(webBuilder =>
+//           {
+//               webBuilder.UseStartup<Program>();
+//           });
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
