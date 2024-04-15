@@ -13,6 +13,11 @@ namespace DoctorRepo
        
         Task UpdatingMedication();
         Task<List<PatientInfo>> GetAllAssignedPatients(Guid DoctorId);
+        Task CreateDoctor(DoctorsInfo doctorInfo);
+
+        Task DeleteDoctor(Guid DoctorId);
+        Task AssigningPatients(Guid DoctorId,Guid PatientId);
+
 
 
 
