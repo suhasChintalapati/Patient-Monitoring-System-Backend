@@ -12,20 +12,6 @@ builder.Services.AddScoped<IPatientVitalsRepo,PatientVitalRepo>();
 builder.Services.AddScoped<IDoctorService,DoctorService>();
 builder.Services.AddScoped<IDoctorRepo,DoctorsRepo>();
 
-
-//Cors Code
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowFlutterApp",
-        builder =>
-        {
-            builder.WithOrigins("*")
-            .AllowAnyHeader()
-            .AllowAnyMethod();
-        }
-        );
-});
-
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -76,7 +62,7 @@ builder.Services.AddSingleton<CosmosClient>((serviceProvider) =>
 });
 
 var app = builder.Build();
-app.UseCors("AllowFlutterApp");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

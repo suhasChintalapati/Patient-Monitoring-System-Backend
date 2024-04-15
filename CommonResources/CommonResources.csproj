@@ -125,7 +125,6 @@
     <Compile Include="Models\DoctorsInfo.cs" />
     <Compile Include="Models\Medication.cs" />
     <Compile Include="Models\Medicines.cs" />
-    <Compile Include="Models\PatientAssignment.cs" />
     <Compile Include="Models\PatientInfo.cs" />
     <Compile Include="Models\PatientVitalsInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

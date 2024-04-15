@@ -11,10 +11,9 @@ namespace DoctorRepo
     public interface IDoctorRepo
     {
        
-        Task AddMedication(Guid PatientId,Guid DoctorId);
-        Task RemoveMedication(Guid PatientId,Guid DoctorId);
+        Task UpdatingMedication();
         Task<List<PatientInfo>> GetAllAssignedPatients(Guid DoctorId);
-        Task CreateDoctor(DoctorsInfo doctorInfo);
+
 
 
 
