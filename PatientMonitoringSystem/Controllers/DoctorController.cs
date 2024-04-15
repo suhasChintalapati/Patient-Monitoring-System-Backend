@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CommonResources.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PatientMonitoringSystem.Controllers
@@ -7,7 +8,11 @@ namespace PatientMonitoringSystem.Controllers
     [ApiController]
     public class DoctorController : ControllerBase
     {
-
+        [HttpPost]
+        public Task CreatePatient(DoctorsInfo doctorsInfo)
+        {
+            
+        }
 
     }
 }

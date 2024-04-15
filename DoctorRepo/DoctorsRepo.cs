@@ -26,9 +26,21 @@ namespace DoctorRepo
             throw new NotImplementedException();
         }
 
-        public Task UpdatingMedication()
+        public Task AddMedication(Guid PatientId, Guid DoctorId)
         {
             throw new NotImplementedException();
+        }
+
+        public Task RemoveMedication(Guid PatientId, Guid DoctorId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task CreateDoctor(DoctorsInfo doctorInfo)
+        {
+            doctorInfo.Id = Guid.NewGuid();
+            await _container.CreateItemAsync(doctorInfo);
+
         }
     }
 }
