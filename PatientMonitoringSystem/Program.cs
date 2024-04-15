@@ -14,6 +14,19 @@ builder.Services.AddScoped<IDoctorRepo,DoctorsRepo>();
 
 // Add services to the container.
 
+//Cors Code
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFlutterApp",
+        builder =>
+        {
+            builder.WithOrigins("*")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        }
+        );
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -62,7 +75,7 @@ builder.Services.AddSingleton<CosmosClient>((serviceProvider) =>
 });
 
 var app = builder.Build();
-
+app.UseCors("AllowFlutterApp");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
