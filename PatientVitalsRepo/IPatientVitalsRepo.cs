@@ -15,5 +15,6 @@ namespace PatientVitalsRepo
         Task<PatientVitalsInfo> GetLatestData(Guid id);
         Task<List<PatientInfo>> GetAllPatients();
         Task DeleteOutDatedVitals(Guid id);
+        Task<Guid> PatientLogin(string email,string password);
     }
 }

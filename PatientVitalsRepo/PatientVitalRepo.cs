@@ -87,5 +87,27 @@ namespace PatientVitalsRepo
             }
             return null;
         }
+
+        public async Task<Guid> PatientLogin(string email, string password)
+        {
+            try
+            {
+                QueryDefinition query = new QueryDefinition($"Select * from Patients where  Patients.type='Patient' and Patients.email='{email}' and Patients.password='{password}' ");
+                var iterator = _container.GetItemQueryIterator<PatientInfo>(query);
+                while (iterator.HasMoreResults)
+                {
+                    var result = await iterator.ReadNextAsync();
+
+                    return result.FirstOrDefault().PatientId;
+                }
+                return Guid.Empty;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return Guid.Empty;
+            }
+        }
     }
 }

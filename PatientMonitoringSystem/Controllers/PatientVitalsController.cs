@@ -53,5 +53,12 @@ namespace PatientMonitoringSystem.Controllers
         {
             return await _patientService.GetMeanPatientVital(id);
         }
+
+        [HttpGet]
+        public async Task<Guid> PatientLogin(string email,string password)
+        {
+            return await  _patientService.PatientLogin(email, password);
+        }
     }
+
 }

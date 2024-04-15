@@ -29,5 +29,10 @@ namespace PatientMonitoringSystem.Controllers
         {
             await _doctorService.PatientAssinging(DoctorId, PatientId);
         }
+        [HttpGet]
+        public async Task<Guid> DoctorLogin(String Email,String Password)
+        {
+           return  await _doctorService.DoctorLogin(Email, Password);
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace DoctorRepo
         Task AssigningPatients(Guid DoctorId,Guid PatientId);
 
 
-
+        Task<Guid> LoginDoctor(String Email,String Password);
 
 
     }

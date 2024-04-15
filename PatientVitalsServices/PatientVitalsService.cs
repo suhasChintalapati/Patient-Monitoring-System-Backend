@@ -61,5 +61,10 @@ namespace PatientVitalsServices
             PatientMean.CreatedTime = DateTime.UtcNow;
             return PatientMean;
         }
+
+        public Task<Guid> PatientLogin(string userName, string password)
+        {
+            return _patientVitalRepo.PatientLogin(userName, password);
+        }
     }
 }

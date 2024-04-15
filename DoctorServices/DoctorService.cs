@@ -25,6 +25,11 @@ namespace DoctorServices
             await _doctorRepo.DeleteDoctor(doctorId);
         }
 
+        public async Task<Guid> DoctorLogin(string Email, string Password)
+        {
+            return await _doctorRepo.LoginDoctor(Email, Password);
+        }
+
         public async Task PatientAssinging(Guid DoctorId, Guid PatientId)
         {
            await _doctorRepo.AssigningPatients(DoctorId, PatientId);

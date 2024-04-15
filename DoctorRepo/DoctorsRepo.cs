@@ -84,6 +84,29 @@ namespace DoctorRepo
             throw new NotImplementedException();
         }
 
+        public async Task<Guid> LoginDoctor(string Email, string Password)
+        {
+            try
+            {
+                QueryDefinition query = new QueryDefinition($"Select * from Doctors where Doctors.type='Doctor' and Doctors.email='{Email}' and Doctors.password='{Password}' ");
+                var iterator = _container.GetItemQueryIterator<DoctorsInfo>(query);
+                while (iterator.HasMoreResults)
+                {
+                    var result =await iterator.ReadNextAsync();
+
+                    return result.FirstOrDefault().DoctorId;
+                }
+                return Guid.Empty;  
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return Guid.Empty;
+            }
+            
+        }
+
         public Task UpdatingMedication()
         {
             throw new NotImplementedException();

@@ -17,5 +17,6 @@ namespace PatientVitalsServices
         Task<List<PatientInfo>> GetAllPatients();
         Task CreateVitals(PatientVitalsInfo student);
         Task<PatientVitalsInfo>GetMeanPatientVital(Guid id);
+        Task<Guid> PatientLogin(string userName, string password);
     }
 }

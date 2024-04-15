@@ -12,5 +12,8 @@ namespace DoctorServices
         Task CreateDoctor(DoctorsInfo doctorsInfo);
         Task Deletedoctor(Guid doctorId);
         Task PatientAssinging(Guid DoctorId, Guid PatientId);
+        Task<Guid> DoctorLogin(String Email, string Password);
     }
+
+
 }
